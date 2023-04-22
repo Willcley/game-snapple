@@ -2,7 +2,8 @@ window.onload = function() {
     let stage = document.getElementById('stage');
     let ctx = stage.getContext('2d');
     document.addEventListener('keydown', keyPush);
-    setInterval(game, 120);
+    let time = 240;
+    let interval = setInterval(game, time);
 
     const vel = 1;
     const lp = 20;
@@ -53,7 +54,7 @@ window.onload = function() {
 
         ctx.fillStyle = 'green';
         for (let i = 0; i < trail.length; i++) {
-            ctx.fillRect(trail[i].x*lp, trail[i].y*lp, lp, lp);
+            ctx.fillRect(trail[i].x*lp, trail[i].y*lp, lp-1, lp-1);
             if (trail[i].x == px && trail[i].y == py) {
                 vx = vy = 0;
                 tail = 5;
@@ -96,6 +97,29 @@ window.onload = function() {
                 vx = 0;
                 vy = vel;
                 break;
+            case 82: //R
+                vx = vy = 0;
+                px = 10;
+                py = 15;
+                fruitx = 25;
+                fruity = 15;
+                trail = [];
+                tail = 5;
+                break;
+            case 16: //Shift
+                if (time == 240) {
+                    clearInterval(interval);
+                    time = 120;
+                    interval = setInterval(game, time);
+                } else if (time == 120) {
+                    clearInterval(interval);
+                    time = 60;    
+                    interval = setInterval(game, time);
+                } else {
+                    clearInterval(interval);
+                    time = 240;
+                    interval = setInterval(game, time);
+                }
         }
     }
 }

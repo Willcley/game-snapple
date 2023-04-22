@@ -1,3 +1,30 @@
 body {
-    margin: 4vw;
+    background-color: #d0b040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 2vw;
+    width: 100vw;
+    height: 100vh;
+    font-family: helvetica;
+}
+
+section canvas {
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 40px 20px #00400040,
+    0 0 30px 20px #00ff0040 inset;
+}
+
+section h2 {
+    color: #ecf4ff80;
+    margin: -640px 0 0 50px;
+    position: absolute;
+    font-size: 32px;
+}
+
+h1 {
+    margin: 40px 40px 40px 80px;
+    width: 480px;
+    font-size: 40px;
 }
