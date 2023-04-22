@@ -82,20 +82,28 @@ window.onload = function() {
     function keyPush(event) {
         switch(event.keyCode) {
             case 37: //Left
-                vx = -vel;
-                vy = 0;
+                if (vx == 0) {
+                    vx = -vel;
+                    vy = 0;
+                }
                 break;
             case 38: //Up
-                vx = 0;
-                vy = -vel;
+                if (vy == 0) {
+                    vx = 0;
+                    vy = -vel;
+                }
                 break;
             case 39: //Right
-                vx = vel;
-                vy = 0;
+                if (vx == 0) {
+                    vx = vel;
+                    vy = 0;
+                }
                 break;
             case 40: //Down
-                vx = 0;
-                vy = vel;
+                if (vy == 0) {
+                    vx = 0;
+                    vy = vel;
+                }
                 break;
             case 82: //R
                 vx = vy = 0;
